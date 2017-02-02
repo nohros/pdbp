@@ -1,0 +1,85 @@
+<html class="js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms no-csstransforms3d csstransitions fontface no-generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Pentaho boilerplate</title>
+    <!--Require JS config-->
+    <script type="text/javascript" src="pentaho/webcontext.js"></script>
+    <script type="text/javascript" src="pentaho/require.js"></script>
+    <script type="text/javascript" src="pentaho/require-cfg.js"></script>
+  </head>
+  
+  <!--<style type="text/css">
+    embed[type*="application/x-shockwave-flash"],
+    embed[src*=".swf"],
+    object[type*="application/x-shockwave-flash"],
+    object[codetype*="application/x-shockwave-flash"],
+    object[src*=".swf"],
+    object[codebase*="swflash.cab"],
+    object[classid*="D27CDB6E-AE6D-11cf-96B8-444553540000"],
+    object[classid*="d27cdb6e-ae6d-11cf-96b8-444553540000"],
+    object[classid*="D27CDB6E-AE6D-11cf-96B8-444553540000"] {
+      display: none !important;
+    }
+  </style>-->
+  
+  <body>
+    <div class="container">
+    </div>
+    
+    <!-- Pentaho dashboard loading routine -->
+    <script language="javascript" type="text/javascript">
+      require([
+        'cdf/Dashboard.Bootstrap',
+        'cdf/Logger',
+        'cdf/lib/jquery',
+        'amd!cdf/lib/underscore',
+        'cdf/lib/moment',
+        'cdf/lib/CCC/cdo',
+        'cdf/lib/CCC/def',
+        'cdf/lib/CCC/protovis-compat!',
+        'cdf/lib/CCC/pvc',
+        'cdf/dashboard/Utils'
+      ], function(Dashboard, Logger, $, _, moment, def, pv, pvc, Utils) {
+        $("body").removeClass("fouc-protected");
+        
+        window.dashboard = new Dashboard({
+          context: {
+            "path": "",
+            "serverLocalDate": 1486041127814,
+            queryData: {},
+            "roles": [
+              "Administrator",
+              "Authenticated",
+              "Business Analyst",
+              "Power User",
+              "Report Author"
+            ],
+            "sessionTimeout": 7200,
+            "sessionAttributes": {},
+            "locale":"en_US",
+            "params":{},
+            "serverUTCDate":1486048327814,
+            "user":"pentaho"
+          },
+          storage:{}
+        });
+      });
+    </script>
+    <script language="javascript" type="text/javascript">
+      require([
+        'cdf/lib/jquery',
+        'amd!cdf/lib/jquery.corner'
+      ], function($) {
+        $(".cdfdd-round").corner();
+        $(".cdfdd-bevel").corner("bevel");
+        $(".cdfdd-notch").corner("botch");
+        $(".cdfdd-bite").corner("bite");
+        $(".cdfdd-bevel_top").corner("bevel top");
+        $(".cdfdd-dog_tr").corner("dog tr");
+      });
+    </script>
+    <div id="cdfErrorDiv"></div>
+  </body>
+</html>
